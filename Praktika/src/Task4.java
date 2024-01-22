@@ -1,29 +1,30 @@
-import java.util.Scanner;
-
 public class Task4 {
+    //Напечатать числа в виде следующей таблицы :
+    // 1 2...10
+    // 1 2...10
+    // 1 2...10
+    // 1 2...10
     public static void main(String[] args) {
-        //Даны три вещественных числа a,b,c.
-        // Проверить:1.выполняется ли неравенство a<b<c; 2.выполняется ли неравенство b>a>c
-        Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        sc.close();
-        if (a < b && b<c)
+        string(1, 10, 4);
+
+    }
+
+    public static void string(int a, int b, int c) {
+        if (a <= c)
         {
-            System.out.println("Выполняется неравенство a<b<c ");
-        }
-        else
-        {
-            System.out.println("Неравенство не выполняется");
-        }
-        if (b > a && a>c)
-        {
-            System.out.println("Bыполняется неравенство b>a>c");
-        }
-        else
-        {
-            System.out.println("Второе Неравенство не выполняется");
+            table(1,b);
+            System.out.println();
+            string(a+1,b,c);
         }
     }
+    public static void  table(int a,int c)
+    {
+        if (a<=c)
+    {
+        System.out.print(a + " ");
+        table(a+1,c);
+    }
+    }
 }
+
+

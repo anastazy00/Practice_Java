@@ -1,26 +1,29 @@
 import java.util.Scanner;
 
 public class Task2 {
+    // Составить процедуру,"рисующую" на экране горизонтальную линию из любого числа символов "*"
     public static void main(String[] args) {
-        //Даны радиус круга и стороны квадрата.У какой фигуры площадь больше?
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите радиус круга а = "  );
-        System.out.println("Введите сторону квадрата b = ");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
+        char a ='*';
+        Scanner sc = new Scanner(System. in);
+        System.out.println("Введите количество символов");
+        int number = sc.nextInt();
         sc.close();
-        double Pa = Math.PI*a;
-        double Pb = Math.pow(b,2);
-        if (Pa>Pb)
+        if (number<=0)
         {
-            System.out.println("Площадь круга больше");
+            System.out.println("Введено некорректное число");
         }
-        else
+        horizontalLine(a,number,0);
+    }
+    public static void horizontalLine(char b, int m, int count)
+    {
+        if (count<m)
         {
-            System.out.println("Площадь квадрата больше");
+            count++;
+            System.out.print(b);
+            horizontalLine(b, m, count);
+
         }
-
-
 
     }
+
 }
